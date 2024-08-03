@@ -17,7 +17,7 @@ public class MainApplication {
     public static void main(String[] args) {
         // Create repositories
         MockProductoRepository productoRepository = new MockProductoRepository();
-        MockProductoReadRepository productoReadRepository = new MockProductoReadRepository();
+        MockProductoReadRepository productoReadRepository = new MockProductoReadRepository(productoRepository);
         
         // Create Mediator
         Mediator mediator = new Mediator();

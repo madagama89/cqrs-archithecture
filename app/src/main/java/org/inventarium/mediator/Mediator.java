@@ -5,9 +5,10 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
+
 public class Mediator {
-    private Map<Class<?>, Consumer<?>> commandHandlers = new HashMap<>();
-    private Map<Class<?>, Function<?, ?>> queryHandlers = new HashMap<>();
+    private final Map<Class<?>, Consumer<?>> commandHandlers = new HashMap<>();
+    private final Map<Class<?>, Function<?, ?>> queryHandlers = new HashMap<>();
 
     public <T> void registerCommandHandler(Class<T> commandType, Consumer<T> handler) {
         commandHandlers.put(commandType, handler);

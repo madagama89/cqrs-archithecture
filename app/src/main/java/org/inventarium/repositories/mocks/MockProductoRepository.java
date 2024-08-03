@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MockProductoRepository implements ProductoRepository {
-    private Map<String, Producto> productos = new HashMap<>();
+    private final Map<String, Producto> productos = new HashMap<>();
 
     @Override
     public void save(Producto producto) {
@@ -18,20 +18,23 @@ public class MockProductoRepository implements ProductoRepository {
     }
 
     @Override
-    public void update(Producto producto) {
-        productos.put(producto.getId(), producto);
-    }
-
-    @Override
-    public void delete(String id) {
-        productos.remove(id);
-    }
-
     public Producto findById(String id) {
         return productos.get(id);
     }
 
-    public List<Producto> findAll() {
-        return new ArrayList<>(productos.values());
+    public Map<String, Producto> findAll() {
+        return productos;
+    }
+
+    @Override
+    public void update(Producto producto) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
+    @Override
+    public void delete(String id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
 }

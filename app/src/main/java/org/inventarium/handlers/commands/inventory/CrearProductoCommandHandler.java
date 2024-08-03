@@ -6,8 +6,9 @@ import org.inventarium.repositories.ProductoRepository;
 
 import java.util.function.Consumer;
 
+
 public class CrearProductoCommandHandler implements Consumer<CrearProductoCommand> {
-    private ProductoRepository productoRepository;
+    private final ProductoRepository productoRepository;
 
     public CrearProductoCommandHandler(ProductoRepository productoRepository) {
         this.productoRepository = productoRepository;
@@ -19,4 +20,5 @@ public class CrearProductoCommandHandler implements Consumer<CrearProductoComman
         productoRepository.save(producto);
     }
 }
+
 
